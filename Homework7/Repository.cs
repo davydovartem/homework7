@@ -10,13 +10,13 @@ namespace Homework7
     class Repository
     {
         //массив с сотдрудниками
-        private List<Worker> _workers = new List<Worker>();
+        private readonly List<Worker> _workers = new List<Worker>();
         //массив с добавленными в процессе работы программы сотрудниками
-        private List<Worker> _addedWorkers = new List<Worker>();
+        private readonly List<Worker> _addedWorkers = new List<Worker>();
         //флаг удаления сотрудника в процессе работы программы
         private bool _workerDeleted = false;
         //имя файла, из которого загружаются и в который сохраняются сотрудники
-        private string _fileName;
+        private readonly string _fileName;
         public Repository(string fileName)
         {
             _fileName = fileName;
