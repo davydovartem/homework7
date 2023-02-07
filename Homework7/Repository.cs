@@ -25,7 +25,12 @@ namespace Homework7
         #region Methods
         private int GetMaxId()
         {
-            return _workers.Max(worker => worker.Id);
+            int? maxId = _workers.DefaultIfEmpty().Max(worker => worker.Id);
+            if ( maxId == null)
+            {
+                maxId = 0;
+            }
+            return (int)maxId;
         }
         private List<Worker> GetAllWorkers()
         {
